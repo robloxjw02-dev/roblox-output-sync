@@ -11,7 +11,7 @@ let scriptNamePaths: Map<string, string[]> = new Map<string, string[]>();
 
 function getScriptNameFromPath(pathStr: string): string | undefined {
 	let pathObj = path.parse(pathStr);
-	if (pathObj.ext.toLowerCase() !== '.lua') {
+	if (pathObj.ext.toLowerCase() !== '.lua' && pathObj.ext.toLowerCase() !== '.luau') {
 		return undefined;
 	}
 	let scriptName = pathObj.base.replace(robloxScriptSuffixesRegex, '');

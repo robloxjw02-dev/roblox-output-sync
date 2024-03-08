@@ -1,16 +1,14 @@
 {
-	"name": "roblox-output-sync",
-	"displayName": "Roblox Output Sync",
+	"name": "roblox-output-synchronize",
+	"displayName": "Roblox Output Synchronize",
 	"description": "Shows Roblox output in VS Code for convenience. Requires a companion Roblox plugin.",
 	"license": "MIT",
-	"publisher": "corecii",
-	"icon": "images/icon.png",
-	"homepage": "https://github.com/Corecii/Roblox-VS-Code-Output-Sync/blob/master/README.md",
+	"publisher": "jo-project",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/corecii/Roblox-VS-Code-Output-Sync.git"
+		"url": "https://github.com/robloxjw02-dev/roblox-output-sync.git"
 	},
-	"version": "0.2.0",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.39.0"
 	},
@@ -41,46 +39,46 @@
 			}
 		],
 		"configuration": {
-			"title": "roblox-output-sync",
+			"title": "roblox-output-synchronize",
 			"properties": {
-				"robloxOutputSync.startServerPort": {
+				"robloxOutputSynchronize.startServerPort": {
 					"type": "number",
 					"default": 32337,
 					"description": "The port to start the local log capture server on",
 					"minimum": 0,
 					"maximum": 65535
 				},
-				"robloxOutputSync.startAutomatically": {
+				"robloxOutputSynchronize.startAutomatically": {
 					"type": "boolean",
 					"default": false,
 					"description": "Whether to start automatically. It is suggested that you do not turn this on globally. Try turning it on per-workspace/project."
 				},
-				"robloxOutputSync.useOutputChannels": {
+				"robloxOutputSynchronize.useOutputChannels": {
 					"type": "boolean",
 					"default": true,
 					"description": "Use output channels instead of pseudo-terminals. Output channels support clickable file links but do not support proper colors."
 				},
-				"robloxOutputSync.useColorizerLabels": {
+				"robloxOutputSynchronize.useColorizerLabels": {
 					"type": "boolean",
 					"default": true,
 					"markdownDescription": "Use [Output Colorizer](https://marketplace.visualstudio.com/items?itemName=IBM.output-colorizer)-compatible labels to colorize the output channel"
 				},
-				"robloxOutputSync.scriptPathAlwaysQuoted": {
+				"robloxOutputSynchronize.scriptPathAlwaysQuoted": {
 					"type": "boolean",
 					"default": true,
 					"description": "Whether to always quote file paths. If false, paths are only quoted if they contain a space."
 				},
-				"robloxOutputSync.scriptPathMini": {
+				"robloxOutputSynchronize.scriptPathMini": {
 					"type": "boolean",
 					"default": false,
 					"markdownDescription": "Whether to replace \"mini\" script paths such as `ServerStorage.Modules.Module:1`"
 				},
-				"robloxOutputSync.scriptPathRelative": {
+				"robloxOutputSynchronize.scriptPathRelative": {
 					"type": "boolean",
 					"default": false,
 					"description": "Whether to use relative or absolute paths. Relative paths cannot be clicked but look nicer."
 				},
-				"robloxOutputSync.scriptPathMode": {
+				"robloxOutputSynchronize.scriptPathMode": {
 					"type": "string",
 					"enum": [
 						"File",
@@ -95,7 +93,7 @@
 						"Show both in the format of file_path (roblox_path)"
 					]
 				},
-				"robloxOutputSync.scriptPathResolver": {
+				"robloxOutputSynchronize.scriptPathResolver": {
 					"type": "string",
 					"enum": [
 						"Rojo",
@@ -110,7 +108,7 @@
 						"Use Rojo to find files and use the script name as a backup"
 					]
 				},
-				"robloxOutputSync.watchFiles": {
+				"robloxOutputSynchronize.watchFiles": {
 					"type": "boolean",
 					"default": true,
 					"markdownDescription": "If true, builds a script name to file path map internally by watching all Lua files in the workspace. For the Rojo resolver, this is used to resolve special file names such as `.server.lua` and is used to exclude files that do not exist on the file system. For the Name resolver, this is the entire backbone and is required for any resolution."

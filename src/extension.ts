@@ -55,7 +55,7 @@ function formatVersion(version: number[]) {
 }
 
 function getSetting(name: string) {
-	return vscode.workspace.getConfiguration('robloxOutputSync').get(name);
+	return vscode.workspace.getConfiguration('robloxOutputSynchronize').get(name);
 }
 
 function updateWatchers() {
@@ -367,7 +367,7 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposable2 = vscode.commands.registerCommand('extension.stop', () => stopServer());
 
 	let disposable3 = vscode.workspace.onDidChangeConfiguration(event => {
-		if (event.affectsConfiguration('robloxOutputSync')) {
+		if (event.affectsConfiguration('robloxOutputSynchronize')) {
 			updateWatchers();
 		}
 		if (getSetting('startAutomatically') && !server) {
